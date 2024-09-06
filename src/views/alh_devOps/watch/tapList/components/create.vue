@@ -4,23 +4,16 @@
       <el-form ref="dataForm" :model="temp" label-position="left" label-width="auto" :rules="rules">
         <el-row>
           <el-col :span="24">
-            <el-form-item label="调用者名称" prop="customerCode">
+            <el-form-item label="目录ID" prop="customerCode">
               <el-input v-model="temp.index" :disabled="title === '编辑'" />
             </el-form-item>
           </el-col>
           <el-col :span="24">
-            <el-form-item label="key" prop="customerName">
+            <el-form-item label="目录名称" prop="customerName">
               <el-input v-model="temp.code" />
             </el-form-item>
           </el-col>
-          <el-col :span="24">
-            <el-form-item label="当前状态" prop="type3">
-              <el-radio-group v-model="temp.type3" size="mini">
-                <el-radio :label="0" border>不正常</el-radio>
-                <el-radio :label="1" border>正常</el-radio>
-              </el-radio-group>
-            </el-form-item>
-          </el-col>
+
         </el-row>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -34,14 +27,16 @@
 <script>
 
 export default {
+  components: {
+
+  },
   data() {
     return {
-      title: '新增资源信息',
+      title: '新增用户信息',
       visible: false,
       temp: {
         index: '',
-        code: '',
-        type3: ''
+        code: ''
       },
       rules: {}
     }

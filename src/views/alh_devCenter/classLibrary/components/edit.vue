@@ -48,9 +48,18 @@ export default {
         }
     },
     methods: {
-        show(val) {
-            this.visible = true
-        },
+        show(row) {
+      // 编辑
+      if (row.index) {
+        this.title = '编辑'
+        this.temp = { ...row }
+      } else {
+        // 新增
+        this.title = '新增'
+        this.temp = {}
+      }
+      this.visible = true
+    },
         submitForm() {
             this.$refs['dataForm'].validate((valid) => {
                 if (valid) {
